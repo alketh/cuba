@@ -18,5 +18,5 @@ get_cuba <- function() {
   # Select file names.
   out <- purrr::map2_chr(fn, ids, ~stringr::str_sub(string = .x, start = .y))
   zip <- stringr::str_detect(out, pattern = "\\.bz2")
-  out[!zip]
+  paste0(url, out[!zip])
 }
