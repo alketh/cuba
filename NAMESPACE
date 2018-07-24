@@ -2,4 +2,5 @@
 
 export("%>%")
 export(get_cuba)
+export(read_cuba)
 importFrom(magrittr,"%>%")
