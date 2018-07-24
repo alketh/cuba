@@ -11,4 +11,7 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 Imports: 
-    magrittr
+    magrittr,
+    xml2,
+    rvest,
+    purrr
