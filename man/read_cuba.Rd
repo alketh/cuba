@@ -15,3 +15,8 @@ Tibble
 \description{
 Read in *.grib2 data
 }
+\examples{
+path <- file.path("inst", "extdata")
+files <- list.files(path, full.names = TRUE, pattern = "\\\\.grb2")
+grib2 <- files[1]
+}
