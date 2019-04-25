@@ -9,9 +9,14 @@ met <- stars::read_stars("inst/extdata/Current_ofi_2019042400_00.grb2")
 
 ss <- as.data.frame(met)
 
-ggplot(ss[ss$band == 1, ], aes(x = x, y = y, fill = Current_ofi_2019042400_00.grb2)) +
+b1 <- ss[ss$band == 1, ]
+
+b1 <- dplyr::filter(b1, x > 7)
+b1 <- dplyr::filter(b1, y < 53.8)
+
+ggplot(b1, aes(x = x, y = y, fill = Current_ofi_2019042400_00.grb2)) +
   geom_raster() +
-  scale_fill_viridis()
+  scale_fill_viridis_c()
 
 plot(met[[1]])
 
