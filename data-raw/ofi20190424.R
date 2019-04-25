@@ -3,7 +3,15 @@
 
 # Die zeitliche Auflösung aller Datenpakete beträgt 15 Minuten.
 
+library(ggplot2)
+
 met <- stars::read_stars("inst/extdata/Current_ofi_2019042400_00.grb2")
+
+ss <- as.data.frame(met)
+
+ggplot(ss[ss$band == 1, ], aes(x = x, y = y, fill = Current_ofi_2019042400_00.grb2)) +
+  geom_raster() +
+  scale_fill_viridis()
 
 plot(met[[1]])
 
